@@ -1,13 +1,13 @@
 pub use log::error;
 
-#[macro_errort]
+#[macro_export]
 macro_rules! out {
   ($err:expr) => {
     err::error!("{}", $err);
   };
 }
 
-#[macro_errort]
+#[macro_export]
 macro_rules! ok {
   ($result:expr) => {{
     match $result {
@@ -20,7 +20,7 @@ macro_rules! ok {
   }};
 }
 
-#[macro_errort]
+#[macro_export]
 macro_rules! log {
   ($result:expr) => {{
     if let Err(err) = $result {
